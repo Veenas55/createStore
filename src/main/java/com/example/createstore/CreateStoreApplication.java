@@ -9,7 +9,7 @@ public class CreateStoreApplication {
 
     public static void main(String[] args) {
         //configuration of dotenv-java
-       // Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
+        Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
         dotenv.entries().forEach((entry -> System.setProperty( entry.getKey(), entry.getValue()) ));
 
         SpringApplication.run(CreateStoreApplication.class, args);
