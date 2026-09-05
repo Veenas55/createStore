@@ -6,13 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class CreateStoreApplication {
-
     public static void main(String[] args) {
-        //configuration of dotenv-java
+        // configuration of dotenv-java
         Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
-        dotenv.entries().forEach((entry -> System.setProperty( entry.getKey(), entry.getValue()) ));
+        dotenv.entries().forEach((entry -> System.setProperty(entry.getKey(), entry.getValue())));
 
+        System.out.println("DATABASE_USERNAME = " + System.getProperty("DATABASE_USERNAME"));
         SpringApplication.run(CreateStoreApplication.class, args);
     }
-
 }
