@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "order_items")
 @Getter
@@ -32,6 +34,7 @@ public class OrderItems {
     @Column(name = "price_at_purchase", nullable = false)
     private BigDecimal priceAtPurchase;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
