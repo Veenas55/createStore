@@ -9,7 +9,7 @@ class CreateStoreApplicationTests {
 
     static {
         Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
-        dotenv.entries().forEach((entry -> System.setProperty(entry.getKey(), entry.getValue())));
+        dotenv.entries().forEach((entry -> System.setProperty(entry.getKey().trim(), entry.getValue().trim())));
     }
 
     @Test
